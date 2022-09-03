@@ -1,0 +1,226 @@
+@font-face {
+    font-family: Sofia-Regular;
+    src: url('../fonts/Sofia/Sofia-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+/* Navigation Begins */
+nav {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    z-index: 999;
+}
+
+nav .inner-width {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto !important;
+    position: fixed;
+    left: 0;
+    top: 0%;
+    box-shadow: 5px 10px 1.5px rgba(123, 123, 164, .05);
+    background: white;
+    height: 90px;
+    padding: 0 !important;
+}
+
+nav .inner-width.magenta {
+    background: magenta;
+}
+
+nav .inner-width .navLogo h1 {
+    color: white !important;
+    font-size: 35px;
+    font-family: Sofia-Regular;
+
+}
+
+nav .inner-width .navLogo h1 a {
+    text-decoration: none;
+    color: #585b5b;
+}
+
+nav .inner-width .menu-toggler {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: transparent;
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggler {
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.menu-toggler span {
+    height: 4px;
+    background: #00FF00;
+    display: block;
+    margin-bottom: 4.5px;
+    width: 30px;
+    transition: .1s ease-in;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.menu-toggler.active span {
+    margin-bottom: 0 !important;
+}
+
+.menu-toggler.active span:first-child {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.menu-toggler.active span:last-child {
+    margin-top: -3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}
+
+.menu-toggler.active span:nth-child(2) {
+    display: none;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+
+nav .inner-width .menu {
+    list-style-type: none;
+    display: flex;
+    padding: 0 !important;
+    z-index: 999;
+}
+
+nav .inner-width .menu li a.active {
+    background: #00FF00;
+}
+
+nav .inner-width .menu li a {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 5px 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #585b5b;
+    text-decoration: none;
+}
+
+/* Nav Links Hover */
+nav .inner-width .menu li a:hover {
+    background: #00FF00;
+    border-radius: 1.5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+nav .inner-width .navButton a {
+    text-decoration: none;
+    color: white;
+    background: #00FF00;
+    padding: 9px 35px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 960px) {
+    .inner-width {
+        justify-content: space-between !important;
+    }
+
+    .menu-toggler {
+        display: block !important;
+    }
+
+    .menu {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        top: 80%;
+        padding-top: 20px !important;
+        transition: all .5s ease;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        text-align: center;
+        background: white;
+        box-shadow: 5px 10px 1.5px rgba(123, 123, 164, .05);
+    }
+
+    .menu li {
+        margin-right: 35px;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+    .menu li a {
+        text-transform: capitalize !important;
+        line-height: 1.4em;
+        padding: 0 !important;
+        width: 100%;
+
+    }
+
+    .menu li a.active {
+        color: #00FF00 !important;
+        background: none !important;
+    }
+
+    nav .inner-width .menu li a:hover {
+        color: #00FF00;
+        background: none;
+    }
+
+    .navButton {
+        margin-right: 30px;
+    }
+
+    .navLogo {
+        margin-left: 3rem;
+    }
+}
+
+/* Navigation Ends */
